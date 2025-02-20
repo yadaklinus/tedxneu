@@ -8,32 +8,28 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 top-clear-pad">
       <div
-
-        style={{ backgroundImage: "url('/ted.jpg')" }}
-        className="relative w-full h-full text-center bg-cover-main "
+        className="relative w-full h-screen flex items-center justify-center bg-cover bg-center text-white"
+        style={{ backgroundImage: "url('/ted.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50" />
 
-
-        <div className="absolute inset-0 bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black/50" /> {/* Overlay */}
-        <div className="relative z-10 text-center">
+        {/* Content Container */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center">
           <Image src="/logo.png" alt="TED" width={130} height={50} />
           <br />
-          <span className="text-4xl corsive-font">
-            North Eastern University
-          </span>
+          <span className="text-4xl cursive-font !text-white">North Eastern University</span>
           <br />
-          <span className={`${title()} style-font`} style={{ fontSize: "70px" }}>
-            {" "}
+          <span className={`${title()} style-font`} style={{ fontSize: "60px" }}>
             <span className="color-ted">Beyond</span>
             <br />
-            <span> The </span>
+            <span>The</span>
             <br />
-            <span className="color-ted"> Boundries </span>
+            <span className="color-ted">Boundaries</span>
           </span>
         </div>
-
       </div>
+
 
       <div className="gap-3 py-4">
         <div>
