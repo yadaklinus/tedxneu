@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: monospace;
+}
+
+.pri-color {
+    color: #eb0028;
+}
+
+.links {
+    padding: 10px;
+    transition: 0.5s;
+    border-bottom: 1px solid #eb0028;
+}
+
+/* .links:hover{
+    border: 1px solid #EB0028;
+} */
+
+.bg-cover-main {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.top-clear-pad {
+    margin-top: -20px;
+}
+
+.font-ted {
+    font-weight: 1500;
+}
+
+.color-ted {
+    color: #eb0028;
+}
+
+.corsive-font {
+    font-family: monospace;
+}
+
+.style-font {
+    font-family: cursive;
+}

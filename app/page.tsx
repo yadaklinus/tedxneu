@@ -1,55 +1,93 @@
-import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
-
-import { siteConfig } from "@/config/site";
+"use client";
+import Image from "next/image";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+
+
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
+    <section className="flex flex-col items-center justify-center gap-4 top-clear-pad">
+      <div
+
+        style={{ backgroundImage: "url('/ted.jpg')" }}
+        className="relative w-full h-full text-center bg-cover-main "
+      >
+
+
+        <div className="absolute inset-0 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black/50" /> {/* Overlay */}
+        <div className="relative z-10 text-center">
+          <Image src="/logo.png" alt="TED" width={130} height={50} />
+          <br />
+          <span className="text-4xl corsive-font">
+            North Eastern University
+          </span>
+          <br />
+          <span className={`${title()} style-font`} style={{ fontSize: "70px" }}>
+            {" "}
+            <span className="color-ted">Beyond</span>
+            <br />
+            <span> The </span>
+            <br />
+            <span className="color-ted"> Boundries </span>
+          </span>
+        </div>
+
+      </div>
+
+      <div className="gap-3 py-4">
+        <div>
+          <div className="flex">
+            <span className={title()}>About</span>
+            <span>
+              <Image src="/logo.png" alt="TED" width={130} height={50} />
+            </span>
+          </div>
+          <br />
+          <span className={subtitle()}>North Eastern University</span>
+          <br />
+          <span style={{ fontSize: "15px" }}>
+            TEDxNortheasternUniversity is a community driven event dedicated to
+            bringing the spirit of TED to our campus and the wider Boston area.
+            We believe in the power of ideas to ignite conversations, inspire
+            change, and ultimately shape our world. Through carefully curated
+            talks, performances, and experiences, we aim to create a space where
+            diverse perspectives converge, sparking curiosity and fostering a
+            deeper understanding of the world around us. We are a team of
+            passionate Northeastern University students, faculty, and alumni
+            driven by a shared belief in the
+          </span>
+        </div>
         <br />
-        <span className={title()}>
-          websites regardless of your design experience.
-        </span>
-        <div className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
+        <hr />
+        <div className="my-7">
+          <div className="flex">
+            <span>
+              <Image src="/logo.png" alt="TED" width={130} height={50} />
+            </span>
+            <span className={title()}>Mission</span>
+          </div>
+          <span className={subtitle()}>Ideas worth spreading</span>
+          <br />
+          <span style={{ fontSize: "15px" }}>
+            We are committed to showcasing thought-provoking speakers from
+            across disciplines – from groundbreaking researchers and innovative
+            entrepreneurs to inspiring artists and community leaders. Our events
+            are designed to be more than just a series of talks; they are
+            opportunities to connect with fellow thinkers, engage in meaningful
+            dialogue, and become part of a larger conversation.
+          </span>
         </div>
       </div>
-
-      <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
-        <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
-        >
-          <GithubIcon size={20} />
-          GitHub
-        </Link>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
+      <br />
+      <div className="items-center">
+        <div className="flex">
+          <span className={title()}>About</span>
           <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
+            <Image src="/logo.png" alt="TED" width={130} height={50} />
           </span>
-        </Snippet>
+        </div>
+
       </div>
     </section>
   );
