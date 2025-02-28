@@ -53,3 +53,13 @@ body {
     z-index: 9999;
     /* To ensure it stays on top of other content */
 }
+
+.buttonted {
+    background-color: #eb0028;
+    color: white;
+}
+
+.seeEvent {
+    color: #eb0028;
+    background-color: white;
+}

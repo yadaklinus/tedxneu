@@ -4,7 +4,7 @@ import { title, subtitle } from "@/components/primitives";
 import { Button } from "@heroui/button";
 import { FC } from "react";
 import SeeEvent from "@/components/seeEvent"
-import Profile from "@/components/profile";
+import { Profile } from "@/components/profile";
 import { Tabs, Tab, Card, CardBody } from "@heroui/react";
 
 const TicketIcon = () => {
@@ -102,22 +102,23 @@ export default function Home() {
         </div>
       </div>
       <br />
+      <hr />
       <div className="items-center">
+        <span className={title()}>Our Speakers</span>
         <div>
-          <span className={title()}>Our Speakers</span>
+
           <br />
           <span className="gap-2 grid grid-cols-2 sm:grid-cols-4">
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
-            <Profile />
+            <Profile imageUrl="./ted.jpg" name="Yadak Linus" occupation="10x Software Devveloper" />
+            <Profile imageUrl="./ted.jpg" name="Yadak Linus" occupation="10x Software Devveloper" />
+            <Profile imageUrl="./ted.jpg" name="Yadak Linus" occupation="10x Software Devveloper" />
+
           </span>
         </div>
 
       </div>
       <div className="sticky-button-container">
-        <Button startContent={<TicketIcon />} size="sm" variant="shadow" className="sticky-button">Save your seat</Button>
+        <Button startContent={<TicketIcon />} size="sm" variant="shadow" className="sticky-button buttonted">Save your seat</Button>
       </div>
 
     </section>

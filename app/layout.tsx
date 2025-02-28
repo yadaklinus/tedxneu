@@ -49,7 +49,7 @@ export default function RootLayout({
             </main>
             <footer className="w-full flex items-center justify-center py-3">
 
-              <span className="text-default-600">Powered by</span>
+              <span className="text-default-600">Powered by{""}</span>
               <p className="text-primary">irenix code</p>
 
             </footer>
