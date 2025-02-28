@@ -45,3 +45,11 @@ body {
 .style-font {
     font-family: cursive;
 }
+
+.sticky-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    /* To ensure it stays on top of other content */
+}

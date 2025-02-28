@@ -1,6 +1,29 @@
 "use client";
 import Image from "next/image";
 import { title, subtitle } from "@/components/primitives";
+import { Button } from "@heroui/button";
+import { FC } from "react";
+import SeeEvent from "@/components/seeEvent"
+import Profile from "@/components/profile";
+import { Tabs, Tab, Card, CardBody } from "@heroui/react";
+
+const TicketIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-ticket-perforated-fill" viewBox="0 0 16 16">
+      <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zm4-1v1h1v-1zm1 3v-1H4v1zm7 0v-1h-1v1zm-1-2h1v-1h-1zm-6 3H4v1h1zm7 1v-1h-1v1zm-7 1H4v1h1zm7 1v-1h-1v1zm-8 1v1h1v-1zm7 1h1v-1h-1z" />
+    </svg>
+  )
+}
+interface TedInput {
+  width: number,
+  height: number
+}
+
+const TedXImage: FC<TedInput> = ({ width, height }) => {
+  return (
+    <Image src="/logo.png" alt="TED" width={width} height={height} />
+  )
+}
 
 
 
@@ -16,7 +39,7 @@ export default function Home() {
 
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
-          <Image src="/logo.png" alt="TED" width={130} height={50} />
+          <TedXImage width={130} height={50} />
           <br />
           <span className="text-4xl cursive-font !text-white">North Eastern University</span>
           <br />
@@ -27,6 +50,9 @@ export default function Home() {
             <br />
             <span className="color-ted">Boundaries</span>
           </span>
+          <span className="flex my-4 gap-4">
+            <SeeEvent />
+          </span>
         </div>
       </div>
 
@@ -36,7 +62,7 @@ export default function Home() {
           <div className="flex">
             <span className={title()}>About</span>
             <span>
-              <Image src="/logo.png" alt="TED" width={130} height={50} />
+              <TedXImage width={130} height={50} />
             </span>
           </div>
           <br />
@@ -59,7 +85,7 @@ export default function Home() {
         <div className="my-7">
           <div className="flex">
             <span>
-              <Image src="/logo.png" alt="TED" width={130} height={50} />
+              <TedXImage width={130} height={50} />
             </span>
             <span className={title()}>Mission</span>
           </div>
@@ -67,7 +93,7 @@ export default function Home() {
           <br />
           <span style={{ fontSize: "15px" }}>
             We are committed to showcasing thought-provoking speakers from
-            across disciplines – from groundbreaking researchers and innovative
+            across disciplines from groundbreaking researchers and innovative
             entrepreneurs to inspiring artists and community leaders. Our events
             are designed to be more than just a series of talks; they are
             opportunities to connect with fellow thinkers, engage in meaningful
@@ -77,14 +103,23 @@ export default function Home() {
       </div>
       <br />
       <div className="items-center">
-        <div className="flex">
-          <span className={title()}>About</span>
-          <span>
-            <Image src="/logo.png" alt="TED" width={130} height={50} />
+        <div>
+          <span className={title()}>Our Speakers</span>
+          <br />
+          <span className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+            <Profile />
+            <Profile />
+            <Profile />
+            <Profile />
+            <Profile />
           </span>
         </div>
 
       </div>
+      <div className="sticky-button-container">
+        <Button startContent={<TicketIcon />} size="sm" variant="shadow" className="sticky-button">Save your seat</Button>
+      </div>
+
     </section>
   );
 }

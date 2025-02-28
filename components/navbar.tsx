@@ -23,15 +23,16 @@ import { ThemeSwitch } from "@/components/theme-switch";
 export const Navbar = () => {
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image src="/logo.png" alt="TED" width={100} height={50} />
-            <sub className="font-bold text-sm text-inherit">North Eastern University</sub>
-          </NextLink>
-        </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+    <HeroUINavbar shouldHideOnScroll>
+      <NavbarBrand as="li" className="gap-3 max-w-fit">
+        <NextLink className="flex justify-start items-center gap-1" href="/">
+          <Image src="/logo.png" alt="TED" width={100} height={50} />
+          <sub className="font-bold text-sm text-inherit">North Eastern University</sub>
+        </NextLink>
+      </NavbarBrand>
+      <NavbarContent className="basis-1/5 sm:basis-full" justify="center">
+
+        <ul className="hidden lg:flex gap-4 ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -55,7 +56,7 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
 
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </NavbarItem>
 
 
@@ -63,7 +64,7 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
 
-        <ThemeSwitch />
+        {/* <ThemeSwitch /> */}
         <NavbarMenuToggle />
       </NavbarContent>
 
